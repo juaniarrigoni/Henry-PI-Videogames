@@ -89,8 +89,7 @@ export default function Home() {
       <div className="filtersMainContariner">
         <div className="filterByGenre">
           <select onChange={(e) => handleFilterByGenre(e)}>
-            <option>Genres</option>
-            <option value="all">All</option>
+            <option value="all">All genres</option>
             {allGenres.map((genres) => {
               return (
                 <option key={genres.name} value={genres.name}>
@@ -125,11 +124,12 @@ export default function Home() {
       <div className="cardsMainContainer">
         {currentVideogames?.map((el) => {
           return (
-            <div key={el.id}>
-              <Link to={"/home/" + el.id}>
+            <div>
+              <Link to={`/home/${el.id}`}>
                 <Card
+                  id={el.id}
                   name={el.name}
-                  image={el.image}
+                  background_image={el.background_image}
                   genres={el.genres}
                   rating={el.rating}
                 />

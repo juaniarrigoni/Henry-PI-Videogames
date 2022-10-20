@@ -11,17 +11,18 @@ export function getAllVideogames() {
     }
 }
 
-export function getVideogamesByName(name) {
+export function getVideogameByName(name) {
     return async function (dispatch) {
         try {
-            var response = await axios.get("http://localhost:3001/videogames?name=" + name)
+            var json = await axios.get(`http://localhost:3001/videogames?name=` + name);
             return dispatch({
-                type: "GET_VIDEOGAMES_BY_NAME",
-                payload: response.data
+                type: 'GET_VIDEOGAMES_BY_NAME',
+                payload: json.data  //es lo q devuelve la ruta una vez q le asigno algo por name
             })
         } catch (error) {
-            console.log(error)
+            alert('Game not found 😕');
         }
+
     }
 }
 
@@ -35,6 +36,25 @@ export function getAllGenres() {
         })
     }
 };
+
+export function videogamesDetail(id) {
+    return async function (dispatch) {
+        const json = await axios.get(`http://localhost:3001/videogames/${id}`)
+        return dispatch({
+            type: "DETAIL_VIDEOGAMES",
+            payload: json.data
+        })
+
+    }
+}
+
+export function postVideogame(payload) {
+    return async function (dispatch) {
+        const response = await axios.post("http://localhost:3001/videogames/share", payload)
+        console.log(response)
+        return response
+    }
+}
 
 /////-----FILTROS-----/////
 export function filterByCreation(payload) {

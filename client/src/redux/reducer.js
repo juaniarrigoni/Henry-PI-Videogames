@@ -1,9 +1,9 @@
 const initialState = {
     videogames: [],
     allVideogames: [],
-    videogamesDetail: {},
     allGenres: [],
-    genresFilter: []
+    detail: {},
+    platform: []
 }
 
 function rootReducer(state = initialState, action) {
@@ -25,7 +25,14 @@ function rootReducer(state = initialState, action) {
                 ...state,
                 allGenres: action.payload
             }
-
+        case "DETAIL_VIDEOGAMES": {
+            return {
+                ...state,
+                detail: action.payload
+            }
+        }
+        case "POST_VIDEOGAME":
+            return { ...state }
         /////-----FILTROS-----/////
         case 'ORDER_NAME': //orden asc y desc
             let sortName = action.payload === 'ascAlph' ?
@@ -84,15 +91,15 @@ function rootReducer(state = initialState, action) {
             }
         case 'FILTER_BY_GENRE':
             const allGames = state.allVideogames; //aca tb para el filtro desde todos
-            const genresFilter = allGames.filter(el => el.allGenres.includes(action.payload))
+            const genresFilter = action.payload === 'all' ?
+                allGames : allGames.filter(el => { return el.genres.find(el => { return el.name === action.payload }) })
             return {
                 ...state,
-                videogames: action.payload === "all" ? allGames : genresFilter
+                videogames: genresFilter
             }
         default: return state
     }
 
 }
-
 
 export default rootReducer

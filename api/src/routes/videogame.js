@@ -2,7 +2,6 @@ const express = require("express");
 const router = express.Router();
 const {
   getVideogames,
-  // getNamesGames,
   getGameID,
   postGame
 } = require("../controllers/videoGamesController");

@@ -13,8 +13,8 @@ function App() {
         <Switch>
           <Route exact path="/" component={Landing} />
           <Route exact path="/home" component={Home} />
-          <Route exact path="/home/:id" component={Detail} />
-          <Route exact path="/home/upload" component={Form} />
+          <Route path="/home/:id" component={Detail} />
+          <Route exact path="/home/share" component={Form} />
         </Switch>
       </div>
     </BrowserRouter>

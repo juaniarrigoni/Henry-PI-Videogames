@@ -9,8 +9,8 @@ export default function Navbar() {
         <button>Go Home</button>
       </Link>
       <br></br>
-      <Link to="/home/upload">
-        <button>Share Videogame📼</button>
+      <Link to="/home/share">
+        <button>Share Videogames📼</button>
       </Link>
     </>
   );
