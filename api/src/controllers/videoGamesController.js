@@ -82,7 +82,7 @@ const getGameID = async (req, res) => {
   // const id = req.params.id   es lo mismo
   const { id } = req.params
   try {
-    if (id.includes('-')) {//detectar UUID en BD
+    if (id.includes('-')) {
       const gameDb = await Videogames.findOne({
         where: { id },
         include: [Genres, Platforms],
@@ -91,8 +91,8 @@ const getGameID = async (req, res) => {
     } else {
       const gameApi = await axios.get(`https://api.rawg.io/api/games/${id}?key=${API_KEY}`);
       let { name, background_image, genres, description, released, rating, platforms } = gameApi.data;
-      genres = genres.map(g => g.name); // de la API me trae un array de objetos, mapeo solo el nombre del genero
-      platforms = platforms.map(p => p.platform.name); // de la API me trae un array de objetos, mapeo solo el nombre de la plataforma
+      // genres = genres.map(g => g.name); // de la API me trae un array de objetos, mapeo solo el nombre del genero
+      platforms = platforms.map(p => p.platform); // de la API me trae un array de objetos, mapeo solo el nombre de la plataforma
       return res.json({
         id,
         name,
@@ -119,8 +119,7 @@ const postGame = async (req, res) => {
     released,
     rating,
     genres,
-    createdInDb,
-    platforms
+    platforms,
   } = req.body;
 
   try {
@@ -129,8 +128,7 @@ const postGame = async (req, res) => {
       description,
       background_image,
       released,
-      rating,
-      createdInDb,
+      rating
     })
 
     const gameGenre = await Genres.findAll({
@@ -152,49 +150,6 @@ const postGame = async (req, res) => {
     console.log(err);
   }
 }
-// {
-//   var { name, description, released, rating, plataforms, genres, background_image } = req.body
-//   var newGame = await Videogames.create({
-//     name, description, released, rating, background_image
-//   })
-//   await newGame.addGenres(genres)
-//   await newGame.addPlataforms(plataforms)
-//   res.send(newGame)
-
-// }
-// {
-//   {
-//     let { name, background_image, description, released, rating, genres, platforms, createdInDb } = req.body
-//     try {
-//       let newGame = await Videogames.create({
-//         name,
-//         background_image,
-//         description,
-//         released,
-//         rating: rating || 1,
-//         createdInDb
-//       })
-
-//       let genreDb = await Genres.findAll({
-//         where: { name: genres },
-//         attributes: ["name"]
-//       })
-
-//       let platformDb = await Platforms.findAll({
-//         where: { name: platforms },
-//         attributes: ["name"]
-//       });
-
-//       await newGame.addGenres(genreDb)
-//       await newGame.addPlatforms(platformDb)
-
-//       res.status(200).send(`Video juego creado con exito 👌, el id es ${newGame.id}`);
-//     } catch (error) {
-//       console.log(error)
-//     }
-//   }
-// }
-
 
 module.exports = {
   getVideogames,

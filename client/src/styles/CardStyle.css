@@ -1,0 +1,71 @@
+li {
+  list-style: none;
+}
+
+.cardImg {
+  border-radius: 10px;
+  border: rgb(139, 60, 60) 3px solid;
+  width: 270px;
+  height: 210px;
+  background-color: transparent;
+}
+
+.cardImg:hover {
+  border: goldenrod 3px solid;
+}
+
+.cardContainer {
+  text-align: center;
+  list-style: none;
+  background-color: grey;
+}
+
+.cardContainer:hover {
+  opacity: 0.8;
+}
+
+.cardName {
+  text-align: center;
+  color: rgb(255, 255, 255);
+  margin: 0.5rem;
+}
+
+.cardGenreTitle {
+  text-align: center;
+  color: rgb(7, 202, 7);
+}
+
+.cardGenre {
+  text-align: center;
+  margin-top: 1rem;
+  color: white;
+  margin-top: 0rem;
+}
+
+.cardRatingTitle {
+  text-align: center;
+  color: rgb(7, 202, 7);
+}
+
+.cardRating {
+  text-align: center;
+  margin-top: 1rem;
+  color: rgb(255, 255, 255);
+  margin-top: 0rem;
+}
+
+.cardBtn {
+  color: white;
+  border: 10px rgb(139, 60, 60);
+  border-radius: 0.5rem;
+  background-color: goldenrod;
+  font: bold 30px "Abadi";
+  font-weight: 900;
+  font-size: 30px;
+  margin-bottom: -150px 1px;
+  margin-right: -700px;
+  width: 85px;
+  justify-content: center;
+  text-align: center;
+  opacity: 0.8;
+}

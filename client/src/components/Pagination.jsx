@@ -1,5 +1,5 @@
 import React from "react";
-// import "../styles/PaginationStyle.css";
+import "../styles/PaginationStyle.css";
 
 export default function Pagination({
   videogamesPerPage,
@@ -15,16 +15,15 @@ export default function Pagination({
   //el resultado es la cantidad de paginas que habra, las pusheamos al arreglo
 
   return (
-    <nav>
-      {/* <h4>You are in page {pageNumbers}</h4> */}
-      <ul className="paginado">
+    <>
+      <div className="paginado">
         {pageNumbers &&
           pageNumbers.map((number) => (
-            <li className="number" key={number}>
+            <a className="number" key={number}>
               <button onClick={() => paginado(number)}>{number}</button>
-            </li>
+            </a>
           ))}
-      </ul>
-    </nav>
+      </div>
+    </>
   );
 }

@@ -1,16 +1,17 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "../styles/NavBarStyle.css";
 
 export default function Navbar() {
   return (
     <>
       <Link to="/home">
-        <h1>Henry PI Videogames</h1>
-        <button>Go Home</button>
+        <h1 className="navBarTitle">Henry PI Videogames</h1>
       </Link>
-      <br></br>
-      <Link to="/home/share">
-        <button>Share Videogames📼</button>
+      <Link to="/create">
+        <div className="navCreateContainer">
+          <button className="navCreateBtn">Share Videogames📼</button>
+        </div>
       </Link>
     </>
   );

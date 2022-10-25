@@ -1,0 +1,128 @@
+.formDanger {
+  color: red;
+  font-size: 12px;
+  display: inline-block;
+  margin-left: 5px;
+  position: absolute;
+}
+
+.formLabel {
+  margin-top: 20px;
+  font-size: 25px;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-family: monospace;
+  color: rgb(209, 37, 129);
+  letter-spacing: 0.5px;
+}
+
+.formLabelGenres {
+  margin-right: 10px;
+  font-family: monospace;
+  color: rgb(209, 37, 129);
+  letter-spacing: 0.5px;
+  font-size: 30px;
+}
+
+.formLabelPlatforms {
+  margin-right: 10px;
+  font-family: monospace;
+  color: rgb(209, 37, 129);
+  letter-spacing: 0.5px;
+  font-size: 30px;
+}
+
+.formTitle {
+  font-family: fantasy;
+  color: rgb(209, 37, 129);
+  font-size: 50px;
+}
+
+.formSelect {
+  height: 25px;
+  width: 200px;
+  font-size: 18px;
+}
+
+.formInput {
+  height: 20px;
+  width: 200px;
+  margin-bottom: 25px;
+}
+
+.formInputImg {
+  margin-bottom: 50px;
+  height: 20px;
+  width: 350px;
+}
+
+.inputDescription {
+  height: 6em;
+  width: 400px;
+  background-color: black;
+}
+
+.formForm {
+  border: 1px solid black;
+  padding-top: 20px;
+  padding-bottom: 1%;
+  margin-left: 50px;
+  margin-right: 50px;
+  background-color: rgb(46, 41, 80, 0.8);
+  box-shadow: 4px 2px 10px 1px rgb(209, 37, 129);
+}
+
+.formGenres {
+  top: 30%;
+  left: 10%;
+}
+
+.formPlatforms {
+  top: 30%;
+  right: 10%;
+}
+
+.formBtnDanger {
+  color: red;
+  font-size: 18px;
+}
+
+.formSubmitButton {
+  margin-top: 20px;
+  background-color: rgb(209, 37, 129);
+  border-radius: 2px;
+  border: 1px solid rgb(209, 37, 129);
+  cursor: pointer;
+  color: #ffffff;
+  font-family: monospace;
+  font-size: 15px;
+  padding: 10px 30px;
+  letter-spacing: 1px;
+}
+.formSubmitButton:hover {
+  background-color: white;
+  color: rgb(209, 37, 129);
+}
+
+.formCloseBtn {
+  margin-left: 2px;
+  font-size: 15px;
+  color: red;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.formLi {
+  font-family: monospace;
+  color: white;
+  font-size: 18px;
+  margin-top: 15px;
+}
+
+.formContainer {
+  margin-top: 3rem;
+  margin-left: 1rem;
+  justify-content: center;
+}

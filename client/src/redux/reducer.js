@@ -2,6 +2,7 @@ const initialState = {
     videogames: [],
     allVideogames: [],
     allGenres: [],
+    allPlatforms: [],
     detail: {},
     platform: []
 }
@@ -24,6 +25,11 @@ function rootReducer(state = initialState, action) {
             return {
                 ...state,
                 allGenres: action.payload
+            }
+        case "GET_ALL_PLATFORMS":
+            return {
+                ...state,
+                allPlatforms: action.payload
             }
         case "DETAIL_VIDEOGAMES": {
             return {
@@ -62,19 +68,19 @@ function rootReducer(state = initialState, action) {
             let sortRating = action.payload === 'ascRat' ?
                 state.videogames.sort(function (a, b) {
                     if (Number(a.rating) > Number(b.rating)) {
-                        return 1;
+                        return -1;
                     }
                     if (Number(b.rating) > Number(a.rating)) {
-                        return -1;
+                        return 1;
                     }
                     return 0;
                 })
                 : state.videogames.sort(function (a, b) {
                     if (Number(a.rating) > Number(b.rating)) {
-                        return -1;
+                        return 1;
                     }
                     if (Number(b.rating) > Number(a.rating)) {
-                        return 1;
+                        return -1;
                     }
                     return 0;
                 });
@@ -84,15 +90,14 @@ function rootReducer(state = initialState, action) {
             }
         case "FILTER_CREATION":
             const allVideogames = state.allVideogames
-            const filterCreation = action.payload === "uploaded" ? allVideogames.filter(el => el.createdInDb) : allVideogames.filter(el => !el.createdInDb)
+            const filterCreation = action.payload === "uploaded" ? allVideogames.filter(el => el.id.length > 5) : allVideogames.filter(el => el.id.toString().length < 5)
             return {
                 ...state,
                 videogames: action.payload === "all" ? state.allVideogames : filterCreation
             }
         case 'FILTER_BY_GENRE':
             const allGames = state.allVideogames; //aca tb para el filtro desde todos
-            const genresFilter = action.payload === 'all' ?
-                allGames : allGames.filter(el => { return el.genres.find(el => { return el.name === action.payload }) })
+            const genresFilter = action.payload === 'all' ? allGames : allGames.filter(el => el.genres.includes(action.payload))
             return {
                 ...state,
                 videogames: genresFilter

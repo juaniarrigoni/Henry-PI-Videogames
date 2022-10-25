@@ -8,6 +8,6 @@ const {
 
 router.get("/", getVideogames);
 router.get("/:id", getGameID);
-router.post("/share", postGame);
+router.post("/create", postGame);
 
 module.exports = router;

@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import {
   getAllVideogames,
   getAllGenres,
+  getAllPlatforms,
   orderByName,
   orderByRating,
   filterByCreation,
@@ -15,6 +16,7 @@ import Navbar from "./Navbar";
 import Pagination from "./Pagination";
 import SearchBar from "./SearchBar";
 import Card from "./Card";
+import "../styles/HomeStyle.css";
 
 export default function Home() {
   const dispatch = useDispatch();
@@ -24,6 +26,7 @@ export default function Home() {
   useEffect(() => {
     dispatch(getAllVideogames());
     dispatch(getAllGenres());
+    dispatch(getAllPlatforms());
   }, [dispatch]);
 
   function handleClick(e) {
@@ -76,19 +79,23 @@ export default function Home() {
   return (
     <>
       <Navbar />
-      <button onClick={(e) => handleClick(e)}>
-        Bring back all Videogames 🎮
-      </button>
+      <div className="homeReloadBtnContainer">
+        <button className="homeReloadBtn" onClick={(e) => handleClick(e)}>
+          Bring back all Videogames 🎮
+        </button>
+      </div>
       <SearchBar />
-      <Pagination
-        videogamesPerPage={videogamesPerPage}
-        allVideogames={allVideogames.length}
-        paginado={paginado}
-      />
-      <h4>You are in page {currentPage}</h4>
+      <div className="homePagination">
+        <Pagination
+          videogamesPerPage={videogamesPerPage}
+          allVideogames={allVideogames.length}
+          paginado={paginado}
+        />
+      </div>
+      <h4 className="homePaginationText">You are in page {currentPage}</h4>
       <div className="filtersMainContariner">
         <div className="filterByGenre">
-          <select onChange={(e) => handleFilterByGenre(e)}>
+          <select classname="select" onChange={(e) => handleFilterByGenre(e)}>
             <option value="all">All genres</option>
             {allGenres.map((genres) => {
               return (
@@ -100,21 +107,24 @@ export default function Home() {
           </select>
         </div>
         <div className="filterByCreation">
-          <select onChange={(e) => handleFilterByCreation(e)}>
+          <select
+            classname="select"
+            onChange={(e) => handleFilterByCreation(e)}
+          >
             <option value="all">All videogames</option>
             <option value="uploaded">Uploaded</option>
             <option value="existent">Existent</option>
           </select>
         </div>
         <div className="orderByName">
-          <select onChange={(e) => handleOrderByName(e)}>
+          <select classname="select" onChange={(e) => handleOrderByName(e)}>
             <option value="all">Order</option>
             <option value="ascAlph">Ascending alphabetically</option>
             <option value="descAlph">Descending alphabetically</option>
           </select>
         </div>
         <div className="orderByRating">
-          <select onChange={(e) => handleOrderByRating(e)}>
+          <select classname="select" onChange={(e) => handleOrderByRating(e)}>
             <option value="all">Rating</option>
             <option value="ascRat">Ascending by Rating</option>
             <option value="descRat">Descending by Rating</option>
@@ -122,23 +132,23 @@ export default function Home() {
         </div>
       </div>
       <div className="cardsMainContainer">
-        {currentVideogames?.map((el) => {
-          return (
-            <div>
-              <Link to={`/home/${el.id}`}>
-                <Card
-                  id={el.id}
-                  name={el.name}
-                  background_image={el.background_image}
-                  genres={el.genres}
-                  rating={el.rating}
-                />
-              </Link>
-              <br />
-              <br />
-            </div>
-          );
-        })}
+        <ul className="homeCardGrid">
+          {currentVideogames?.map((el) => {
+            return (
+              <div key={el.id}>
+                <Link to={`/home/${el.id}`}>
+                  <Card
+                    id={el.id}
+                    name={el.name}
+                    background_image={el.background_image}
+                    genres={el.genres}
+                    rating={el.rating}
+                  />
+                </Link>
+              </div>
+            );
+          })}
+        </ul>
       </div>
     </>
   );

@@ -22,16 +22,24 @@ export function getVideogameByName(name) {
         } catch (error) {
             alert('Game not found 😕');
         }
-
     }
 }
 
 export function getAllGenres() {
     return async function (dispatch) {
-        var json = await axios.get('http://localhost:3001/genres'); //ver si le pongo ,{}
-
+        var json = await axios.get('http://localhost:3001/genres');
         return dispatch({
             type: 'GET_ALL_GENRES',
+            payload: json.data
+        })
+    }
+};
+
+export function getAllPlatforms() {
+    return async function (dispatch) {
+        var json = await axios.get('http://localhost:3001/platforms');
+        return dispatch({
+            type: 'GET_ALL_PLATFORMS',
             payload: json.data
         })
     }
@@ -44,14 +52,12 @@ export function videogamesDetail(id) {
             type: "DETAIL_VIDEOGAMES",
             payload: json.data
         })
-
     }
 }
 
 export function postVideogame(payload) {
     return async function (dispatch) {
-        const response = await axios.post("http://localhost:3001/videogames/share", payload)
-        console.log(response)
+        const response = await axios.post("http://localhost:3001/videogames/create", payload)
         return response
     }
 }

@@ -1,0 +1,41 @@
+.landingPage {
+  width: 100vw;
+  height: 100vh;
+  background-image: url("https://images.alphacoders.com/617/thumb-1920-617270.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  background-size: cover;
+  margin: -40px;
+  padding-top: 80px;
+}
+
+.landingTitle {
+  font: bold 30px "Abadi";
+  text-indent: 35%;
+  font-size: 2.2rem;
+  text-shadow: 0 0 20px #fff, 0 0 20px #fff, 0 0 30px goldenrod,
+    0 0 30px goldenrod, 0 0 30px goldenrod, 0 0 30px goldenrod;
+  word-spacing: 0.1cm;
+  width: 80rem;
+  margin-top: 9rem;
+  padding-left: 3rem;
+}
+
+.landingBtn {
+  color: white;
+  border: 10px rgb(139, 60, 60);
+  border-radius: 0.5rem;
+  background-color: goldenrod;
+  cursor: pointer;
+  font: bold 30px "Abadi";
+  font-weight: 900;
+  font-size: 30px;
+  margin-bottom: -150px 1px;
+  margin-right: -700px;
+  width: 85px;
+  text-decoration: none;
+  justify-content: center;
+  text-align: center;
+  opacity: 0.8;
+}

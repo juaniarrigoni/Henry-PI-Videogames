@@ -1,0 +1,69 @@
+body {
+  background: rgb(38, 37, 37);
+}
+
+.homeReloadBtn {
+  text-decoration: none;
+  color: goldenrod;
+  justify-content: center;
+  margin-top: 1rem;
+  cursor: pointer;
+  border-radius: 0.2rem;
+  outline: none;
+  border: none;
+}
+
+.homeReloadBtnContainer {
+  margin-left: 1rem;
+}
+
+.homeCardGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 270px);
+  gap: 40px;
+  padding: 40px;
+  justify-content: center;
+  transition: margin-left 0.3s 0.1s;
+}
+
+.homePagination {
+  margin-bottom: 2rem;
+  cursor: pointer;
+}
+
+.homePaginationText {
+  color: black;
+  text-shadow: 0 0 10px #fff, 0 0 10px #fff, 0 0 25px rgb(139, 60, 60),
+    0 0 25px rgb(139, 60, 60), 0 0 25px rgb(139, 60, 60),
+    0 0 25px rgb(139, 60, 60);
+  font-size: 1rem;
+}
+
+.filtersMainContariner {
+  display: block;
+  position: center;
+  text-align: center;
+}
+
+.select {
+  cursor: pointer;
+  text-align: center;
+  outline: none;
+  margin-top: 2rem;
+  margin-left: 1.5rem;
+  height: 1.5rem;
+  width: 8rem;
+  font-size: 17px;
+  border-color: rgb(139, 60, 60);
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  background-color: rgb(139, 60, 60);
+  border-radius: 0.3rem;
+  color: rgb(7, 202, 7);
+}
+.select:hover {
+  background-color: goldenrod;
+  opacity: 0.9;
+  font-weight: bold;
+}
