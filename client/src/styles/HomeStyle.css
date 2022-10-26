@@ -1,16 +1,16 @@
 body {
-  background: rgb(38, 37, 37);
+  background-image: url("https://i.ibb.co/xGWfzbQ/game.jpg");
 }
 
 .homeReloadBtn {
-  text-decoration: none;
-  color: goldenrod;
-  justify-content: center;
-  margin-top: 1rem;
+  border: 1px solid rgb(209, 37, 129);
+  background-color: rgb(209, 37, 129);
+  font-family: fantasy;
+  font-size: 25px;
+  margin-top: 20px;
+  padding: 0px 40px 0px 40px;
   cursor: pointer;
-  border-radius: 0.2rem;
-  outline: none;
-  border: none;
+  border: solid black;
 }
 
 .homeReloadBtnContainer {
@@ -19,51 +19,55 @@ body {
 
 .homeCardGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, 270px);
-  gap: 40px;
-  padding: 40px;
-  justify-content: center;
-  transition: margin-left 0.3s 0.1s;
+  grid-gap: 1rem 3.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(27rem, 1fr));
+  margin-right: 20px;
 }
 
 .homePagination {
-  margin-bottom: 2rem;
   cursor: pointer;
 }
 
 .homePaginationText {
-  color: black;
+  font-family: fantasy;
+  color: rgb(8, 8, 8);
   text-shadow: 0 0 10px #fff, 0 0 10px #fff, 0 0 25px rgb(139, 60, 60),
     0 0 25px rgb(139, 60, 60), 0 0 25px rgb(139, 60, 60),
     0 0 25px rgb(139, 60, 60);
-  font-size: 1rem;
+  font-size: 1.5rem;
 }
 
-.filtersMainContariner {
-  display: block;
-  position: center;
-  text-align: center;
+.filterContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-family: fantasy;
+}
+
+.filter {
+  background-color: rgb(46, 41, 80, 0.8);
+  border: 1px solid deeppink;
+  height: 30px;
+  overflow: hidden;
+  width: 200px;
+  position: relative;
+  cursor: pointer;
+  margin: 0 5px;
+  font-family: fantasy;
 }
 
 .select {
-  cursor: pointer;
-  text-align: center;
-  outline: none;
-  margin-top: 2rem;
-  margin-left: 1.5rem;
-  height: 1.5rem;
-  width: 8rem;
-  font-size: 17px;
-  border-color: rgb(139, 60, 60);
-  border-top: none;
-  border-left: none;
-  border-right: none;
-  background-color: rgb(139, 60, 60);
-  border-radius: 0.3rem;
-  color: rgb(7, 202, 7);
+  background: transparent;
+  border: none;
+  font-size: 18px;
+  height: 30px;
+  padding: 5px;
+  width: 215px;
+  color: deeppink;
+  font-family: fantasy;
 }
-.select:hover {
-  background-color: goldenrod;
-  opacity: 0.9;
-  font-weight: bold;
+
+.option {
+  font-family: fantasy;
 }

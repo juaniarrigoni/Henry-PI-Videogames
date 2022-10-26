@@ -62,6 +62,11 @@
   height: 6em;
   width: 400px;
   background-color: black;
+  margin-bottom: 20px;
+}
+
+.formDescriptionContainer {
+  margin-bottom: 30px;
 }
 
 .formForm {
@@ -101,6 +106,15 @@
   padding: 10px 30px;
   letter-spacing: 1px;
 }
+
+.formPlatforms {
+  margin-bottom: 30px;
+}
+
+.formGenres {
+  margin-bottom: 30px;
+}
+
 .formSubmitButton:hover {
   background-color: white;
   color: rgb(209, 37, 129);

@@ -198,7 +198,7 @@ export default function Form() {
           />
         </div>
 
-        <div>
+        <div className="formDescriptionContainer">
           <label className="formLabel">Description</label>
           <textarea
             type="text"
@@ -212,7 +212,6 @@ export default function Form() {
             <p className="formDanger"> {errors.description} </p>
           )}
         </div>
-
         <div className="formPlatforms">
           <label className="formLabelPlatforms">Platforms</label>
           <select

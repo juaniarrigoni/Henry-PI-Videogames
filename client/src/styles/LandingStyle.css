@@ -1,41 +1,52 @@
 .landingPage {
-  width: 100vw;
-  height: 100vh;
-  background-image: url("https://images.alphacoders.com/617/thumb-1920-617270.jpg");
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-attachment: fixed;
+  height: 929px;
+  overflow-y: hidden !important;
+  overflow-x: hidden !important;
+  background-image: url("https://i.ibb.co/xGWfzbQ/game.jpg");
   background-size: cover;
-  margin: -40px;
-  padding-top: 80px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.flex {
+  display: flex;
+  flex-direction: column;
+  margin-left: 58%;
+  margin-top: 150px;
+}
+
+.span {
+  text-align: start;
+  font-size: 25px;
+  color: whitesmoke;
+  margin: 20px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 
 .landingTitle {
-  font: bold 30px "Abadi";
-  text-indent: 35%;
-  font-size: 2.2rem;
-  text-shadow: 0 0 20px #fff, 0 0 20px #fff, 0 0 30px goldenrod,
-    0 0 30px goldenrod, 0 0 30px goldenrod, 0 0 30px goldenrod;
-  word-spacing: 0.1cm;
-  width: 80rem;
-  margin-top: 9rem;
-  padding-left: 3rem;
+  text-align: start;
+  margin-left: 3%;
+  color: deeppink;
+  text-decoration: underline deeppink;
 }
 
 .landingBtn {
-  color: white;
-  border: 10px rgb(139, 60, 60);
-  border-radius: 0.5rem;
-  background-color: goldenrod;
-  cursor: pointer;
-  font: bold 30px "Abadi";
-  font-weight: 900;
+  transform: rotate(-24deg);
+  margin-top: 10px;
+  margin-right: 600px;
+  background-color: transparent;
+  border-color: deeppink;
+  width: 350px;
   font-size: 30px;
-  margin-bottom: -150px 1px;
-  margin-right: -700px;
-  width: 85px;
-  text-decoration: none;
-  justify-content: center;
-  text-align: center;
-  opacity: 0.8;
+  cursor: pointer;
+  color: deeppink;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  padding: 5px;
+  letter-spacing: 2px;
+}
+
+.landingBtn:hover {
+  background-color: deeppink;
+  color: whitesmoke;
 }

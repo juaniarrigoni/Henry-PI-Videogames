@@ -32,6 +32,7 @@ export default function SearchBar() {
         placeholder="Search videogame ..."
         onChange={(e) => handleInputChange(e)}
       />
+
       <button
         className="searchBtn"
         type="submit"

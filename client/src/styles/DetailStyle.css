@@ -1,10 +1,7 @@
-.detailBorder {
-  margin-top: 20px;
-  padding-bottom: 3%;
-  margin-left: 50px;
-  margin-right: 50px;
-  background-color: rgb(46, 41, 80, 0.8);
-  box-shadow: 4px 2px 10px 1px rgb(209, 37, 129);
+.detailHomeBtnContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 .detailHomeBtn {
   width: 150px;
@@ -15,8 +12,38 @@
   cursor: pointer;
   margin-left: 10px;
 }
-.detailInfoContainer {
+
+.detailBorder {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  padding-bottom: 3%;
+  margin-left: 50px;
+  margin-right: 50px;
+  background-color: rgb(46, 41, 80, 0.8);
+  box-shadow: 4px 2px 10px 1px rgb(209, 37, 129);
 }
+
+.detailAllInfo {
+  margin: 0 7rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.detailInfoContainer {
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.detailImg {
+  float: left;
+  margin-left: 10px;
+  border: 0.5px double black;
+  width: 80%;
+}
+
 .detailName {
   padding-top: 25px;
   margin-top: 40px;
@@ -24,13 +51,9 @@
   font-size: 40px;
   color: rgb(209, 37, 129);
 }
-.detailImg {
-  float: left;
-  margin-left: 10px;
-  border: 0.5px double black;
-}
+
 .detailRating {
-  margin-left: 20px;
+  margin-right: 40px;
   display: inline-block;
   font-family: monospace;
   color: rgb(209, 37, 129);
@@ -54,6 +77,7 @@
   color: #f0ffffa9;
   font-size: 15px;
 }
+
 .detailTitleGenres {
   margin-top: 30px;
   margin-right: 45px;
@@ -65,9 +89,10 @@
   font-size: 30px;
 }
 .detailGenres {
+  /* border: solid yellow 3px; */
+  margin-right: 40px;
   display: flex;
   flex-direction: column;
-  margin-right: 30px;
   font-family: monospace;
   color: #f0ffffa9;
   font-size: 15px;
@@ -85,6 +110,7 @@
   font-size: 22px;
   margin-bottom: 50px;
   color: #f0ffffa9;
+  text-align: center;
 }
 
 .loading {

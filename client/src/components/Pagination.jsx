@@ -19,9 +19,11 @@ export default function Pagination({
       <div className="paginado">
         {pageNumbers &&
           pageNumbers.map((number) => (
-            <a className="number" key={number}>
-              <button onClick={() => paginado(number)}>{number}</button>
-            </a>
+            <div className="numberContainer">
+              <button className="number" onClick={() => paginado(number)}>
+                {number}
+              </button>
+            </div>
           ))}
       </div>
     </>

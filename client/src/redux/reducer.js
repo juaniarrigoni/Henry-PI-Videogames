@@ -63,7 +63,8 @@ function rootReducer(state = initialState, action) {
             return {
                 ...state,
                 videogames: action.payload === "all" ? state.allVideogames : sortName,
-            }
+            };
+
         case "ORDER_RATING":
             let sortRating = action.payload === 'ascRat' ?
                 state.videogames.sort(function (a, b) {

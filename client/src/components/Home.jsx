@@ -46,7 +46,7 @@ export default function Home() {
     indexOfLastVideogame
   );
   const paginado = (pageNumber) => {
-    setCurrentPage(pageNumber); // funcion para cambiar el paginado
+    setCurrentPage(pageNumber); // funcion para cambiar el image.pngpaginado
   };
 
   /////-----FUNCIONES-----/////
@@ -84,6 +84,7 @@ export default function Home() {
           Bring back all Videogames 🎮
         </button>
       </div>
+      <br></br>
       <SearchBar />
       <div className="homePagination">
         <Pagination
@@ -93,9 +94,9 @@ export default function Home() {
         />
       </div>
       <h4 className="homePaginationText">You are in page {currentPage}</h4>
-      <div className="filtersMainContariner">
-        <div className="filterByGenre">
-          <select classname="select" onChange={(e) => handleFilterByGenre(e)}>
+      <div className="filterContainer">
+        <div className="filter">
+          <select className="select" onChange={(e) => handleFilterByGenre(e)}>
             <option value="all">All genres</option>
             {allGenres.map((genres) => {
               return (
@@ -106,9 +107,9 @@ export default function Home() {
             })}
           </select>
         </div>
-        <div className="filterByCreation">
+        <div className="filter">
           <select
-            classname="select"
+            className="select"
             onChange={(e) => handleFilterByCreation(e)}
           >
             <option value="all">All videogames</option>
@@ -116,15 +117,15 @@ export default function Home() {
             <option value="existent">Existent</option>
           </select>
         </div>
-        <div className="orderByName">
-          <select classname="select" onChange={(e) => handleOrderByName(e)}>
+        <div className="filter">
+          <select className="select" onChange={(e) => handleOrderByName(e)}>
             <option value="all">Order</option>
             <option value="ascAlph">Ascending alphabetically</option>
             <option value="descAlph">Descending alphabetically</option>
           </select>
         </div>
-        <div className="orderByRating">
-          <select classname="select" onChange={(e) => handleOrderByRating(e)}>
+        <div className="filter">
+          <select className="select" onChange={(e) => handleOrderByRating(e)}>
             <option value="all">Rating</option>
             <option value="ascRat">Ascending by Rating</option>
             <option value="descRat">Descending by Rating</option>

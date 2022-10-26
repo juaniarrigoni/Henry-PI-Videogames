@@ -10,32 +10,31 @@ li {
   background-color: transparent;
 }
 
-.cardImg:hover {
-  border: goldenrod 3px solid;
-}
-
 .cardContainer {
-  text-align: center;
-  list-style: none;
-  background-color: grey;
+  margin: 10px 40px;
+  background-color: rgb(46, 41, 80, 0.8);
+  box-shadow: 4px 2px 10px 1px deeppink;
+  height: 450px;
 }
 
 .cardContainer:hover {
-  opacity: 0.8;
+  background: rgb(209, 37, 129);
 }
 
 .cardName {
-  text-align: center;
+  padding-top: 20px;
+  font-family: monospace;
+  font-size: 20px;
   color: rgb(255, 255, 255);
-  margin: 0.5rem;
+  text-decoration: none;
 }
 
 .cardGenreTitle {
   text-align: center;
-  color: rgb(7, 202, 7);
+  color: rgb(255, 255, 255);
 }
 
-.cardGenre {
+.cardGenres {
   text-align: center;
   margin-top: 1rem;
   color: white;
@@ -44,14 +43,13 @@ li {
 
 .cardRatingTitle {
   text-align: center;
-  color: rgb(7, 202, 7);
+  color: rgb(255, 255, 255);
 }
 
 .cardRating {
-  text-align: center;
-  margin-top: 1rem;
-  color: rgb(255, 255, 255);
-  margin-top: 0rem;
+  color: whitesmoke;
+  margin-top: 1px;
+  margin-left: 2px;
 }
 
 .cardBtn {

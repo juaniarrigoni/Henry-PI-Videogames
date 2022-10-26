@@ -19,44 +19,56 @@ export default function Detail() {
           <h1>Loading...</h1>
         </div>
       ) : (
-        <div className="detailBorder">
-          <Link to={"/home"} onClick={() => history.goBack()}>
-            <button className="detailHomeBtn">HOME</button>
-          </Link>
-          <div className="detailInfoContainer">
-            <h1 className="detailName">{detailedGame.name}</h1>
-            <img
-              className="detailImg"
-              src={detailedGame.background_image}
-              alt={detailedGame.name}
-              height="400"
-              width="450px"
-            />
-            <br />
-            <h2 className="detailRating">Rating: ⭐{detailedGame.rating}</h2>
-            <br />
-            <div>
-              <h3 className="detailTitlePlatforms">Platforms:</h3>
-              <h4 className="detailPlatforms">
-                {detailedGame.platforms?.map((p) => p.name).join(", ")}{" "}
-              </h4>
-            </div>
-            <div>
-              <h3 className="detailTitleGenres">Genres: </h3>
-              <h4 className="detailGenres">
-                {detailedGame.genres?.map((g) => g.name).join(", ")}
-              </h4>
-            </div>
-            <div>
-              <h3 className="detailReleased">
-                {detailedGame.name} was released on {detailedGame.released}
-              </h3>
-            </div>
-            <p className="detailDescription">
-              {detailedGame.description.replaceAll(/<[^>]*.?/g, "")}
-            </p>
+        <>
+          <div className="detailHomeBtnContainer">
+            <Link to={"/home"} onClick={() => history.goBack()}>
+              <button className="detailHomeBtn">HOME</button>
+            </Link>
           </div>
-        </div>
+          <div className="detailBorder">
+            <div className="detailAllInfo">
+              <div className="detailImgContainer">
+                <img
+                  className="detailImg"
+                  src={detailedGame.background_image}
+                  alt={detailedGame.name}
+                  height="400"
+                  width="450px"
+                />
+              </div>
+              <div className="detailInfoContainer">
+                <h1 className="detailName">{detailedGame.name}</h1>
+                <br />
+                <h2 className="detailRating">
+                  Rating: ⭐{detailedGame.rating}
+                </h2>
+                <br />
+                <div>
+                  <h3 className="detailTitlePlatforms">Platforms:</h3>
+                  <h4 className="detailPlatforms">
+                    {detailedGame.platforms?.map((p) => p.name).join(", ")}{" "}
+                  </h4>
+                </div>
+                <div>
+                  <h3 className="detailTitleGenres">Genres: </h3>
+                  <h4 className="detailGenres">
+                    {detailedGame.genres?.map((g) => g.name).join(", ")}
+                  </h4>
+                </div>
+                <div>
+                  <h3 className="detailReleased">
+                    {detailedGame.name} was released on {detailedGame.released}
+                  </h3>
+                </div>
+              </div>
+            </div>
+            <div className="detailDescriptionContainer">
+              <p className="detailDescription">
+                {detailedGame.description.replaceAll(/<[^>]*.?/g, "")}
+              </p>
+            </div>
+          </div>
+        </>
       )}
     </>
   );

@@ -14,7 +14,7 @@ module.exports = (sequelize) => {
     },
     description: {
       type: DataTypes.TEXT,
-      allowNull: false
+      allowNull: true
     },
     background_image: {
       type: DataTypes.TEXT,
@@ -22,7 +22,7 @@ module.exports = (sequelize) => {
     released: {
       type: DataTypes.STRING,
       defaulfValue: DataTypes.NOW,
-      allowNull: false
+      allowNull: true
     },
     rating: {
       type: DataTypes.FLOAT,

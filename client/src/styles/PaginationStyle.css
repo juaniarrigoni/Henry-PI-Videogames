@@ -1,24 +1,29 @@
 .paginado {
-  gap: 30px;
-  color: rgb(7, 202, 7);
-  font-size: 1rem;
+  display: grid;
+  gap: 0.8rem;
+  grid-auto-rows: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(0.5rem, 0.4rem));
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 8px 16px;
-  margin-bottom: 2rem;
-}
-.paginado a {
-  gap: 30px;
-  font-weight: bold;
-  color: rgb(7, 202, 7);
-  font-size: 1rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 8px 16px;
 }
 
-.paginado a:hover {
-  color: goldenrod;
+.numberContainer {
+  border: 10px black;
+}
+
+.number {
+  color: rgb(255, 255, 255);
+  font-size: 25px;
+  font-variant-numeric: tabular-nums;
+  margin-bottom: 10px;
+  float: left;
+  padding: 0.3rem 5px;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+}
+
+.number:hover {
+  background: deeppink;
 }
