@@ -10,6 +10,7 @@ import {
   orderByRating,
   filterByCreation,
   filterByGenre,
+  filterByUnusualGenres,
 } from "../redux/actions";
 import { Link } from "react-router-dom";
 import Navbar from "./Navbar";
@@ -45,6 +46,7 @@ export default function Home() {
     indexOfFisrtVideogame,
     indexOfLastVideogame
   );
+
   const paginado = (pageNumber) => {
     setCurrentPage(pageNumber); // funcion para cambiar el image.pngpaginado
   };
@@ -94,6 +96,7 @@ export default function Home() {
         />
       </div>
       <h4 className="homePaginationText">You are in page {currentPage}</h4>
+
       <div className="filterContainer">
         <div className="filter">
           <select className="select" onChange={(e) => handleFilterByGenre(e)}>

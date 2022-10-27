@@ -91,7 +91,7 @@ function rootReducer(state = initialState, action) {
             }
         case "FILTER_CREATION":
             const allVideogames = state.allVideogames
-            const filterCreation = action.payload === "uploaded" ? allVideogames.filter(el => el.id.length > 5) : allVideogames.filter(el => el.id.toString().length < 5)
+            const filterCreation = action.payload === "uploaded" ? allVideogames.filter(el => el.id.length > 5) : allVideogames.filter(el => el.id.toString().length <= 5)
             return {
                 ...state,
                 videogames: action.payload === "all" ? state.allVideogames : filterCreation
@@ -103,9 +103,9 @@ function rootReducer(state = initialState, action) {
                 ...state,
                 videogames: genresFilter
             }
+
         default: return state
     }
-
 }
 
 export default rootReducer

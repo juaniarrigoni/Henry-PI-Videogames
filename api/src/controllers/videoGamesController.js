@@ -10,7 +10,7 @@ function buscadora(arr, palabra) {
     for (var i = 0; i < palabra.length; i++) {
       // 				   PROPIEDAD QUE QUIERA FILTRAR
       //                        |
-      // 						  V	
+      // 						            V	
       arr = arr.filter(e => e.name[i]?.toUpperCase() === palabra[i].toUpperCase())
     }
     return arr
@@ -26,7 +26,6 @@ var gamesAPI = []
 const getVideogames = async (req, res) => {
   try {
     var { name } = req.query
-    // console.log(req);
 
     if (!Cache.length || await Videogames.count() !== cantidadGamesDb) {
       cantidadGamesDb = await Videogames.count()
