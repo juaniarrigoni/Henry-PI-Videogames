@@ -14,7 +14,6 @@ const controllerGenres = async (req, res) => {
             for (let i = 0; i < genres.length; i++) {
                 await Genres.create({ name: genres[i] })
             }
-
             res.send(await Genres.findAll())
         } else {
             res.send(arrGenres)

@@ -40,7 +40,7 @@ function rootReducer(state = initialState, action) {
         case "POST_VIDEOGAME":
             return { ...state }
         /////-----FILTROS-----/////
-        case 'ORDER_NAME': //orden asc y desc
+        case 'ORDER_NAME':
             let sortName = action.payload === 'ascAlph' ?
                 state.videogames.sort(function (a, b) {
                     if (a.name > b.name) {
@@ -64,7 +64,6 @@ function rootReducer(state = initialState, action) {
                 ...state,
                 videogames: action.payload === "all" ? state.allVideogames : sortName,
             };
-
         case "ORDER_RATING":
             let sortRating = action.payload === 'ascRat' ?
                 state.videogames.sort(function (a, b) {
@@ -103,7 +102,13 @@ function rootReducer(state = initialState, action) {
                 ...state,
                 videogames: genresFilter
             }
-
+        case "FILTER_THREE_GENRES":
+            const allgames = state.allVideogames
+            const threeGenres = allgames.filter(el => el.genres.length >= 3)
+            return {
+                ...state,
+                videogames: threeGenres
+            }
         default: return state
     }
 }

@@ -10,7 +10,6 @@ import {
   orderByRating,
   filterByCreation,
   filterByGenre,
-  filterByUnusualGenres,
 } from "../redux/actions";
 import { Link } from "react-router-dom";
 import Navbar from "./Navbar";
@@ -34,6 +33,7 @@ export default function Home() {
     e.preventDefault();
     dispatch(getAllVideogames());
   }
+
   /////-----ESTADO PARA LAS FUNCIONES-----/////
   const [order, setOrder] = useState("");
 

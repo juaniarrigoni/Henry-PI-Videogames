@@ -3,8 +3,6 @@ const { conn, Videogames, Genres, Platforms } = require("../db");
 const { API_KEY } = process.env;
 const { Op } = require("sequelize");
 
-
-
 function buscadora(arr, palabra) {
   if (palabra.length > 0) {
     for (var i = 0; i < palabra.length; i++) {
@@ -15,7 +13,6 @@ function buscadora(arr, palabra) {
     }
     return arr
   }
-
 }
 
 var Cache = [] // Para no estar haciendo pedidos a la api todo el tiempo, lo hago 1 vez y listo
@@ -42,7 +39,7 @@ const getVideogames = async (req, res) => {
         ]
       })
       gamesDB = gamesDB.map(e => { return { id: e.id, name: e.name, rating: e.rating, release: e.released, background_image: e.background_image, genres: e.genres.map(genre => genre.name), platforms: e.platforms.map(plat => plat.name) } })
-
+      //
       let i = 1
       if (!Cache.length) {
         //console.log("Cargo los games de la api, osea que es el primer request si o si");
@@ -75,7 +72,6 @@ const getVideogames = async (req, res) => {
   }
 }
 
-
 /////-----TRAER VIDEOJUEGOS POR ID-----/////
 const getGameID = async (req, res) => {
   // const id = req.params.id   es lo mismo
@@ -104,7 +100,6 @@ const getGameID = async (req, res) => {
       })
     }
   } catch (error) {
-    console.log(id)
     res.status(404).json({ error: 'Id not found 😕' });
   }
 }
@@ -141,8 +136,8 @@ const postGame = async (req, res) => {
       }
     })
 
-    await gameCreated.addPlatform(gamePlatform)
-    await gameCreated.addGenre(gameGenre)
+    await gameCreated.addPlatform(GgamePlatform)
+    await gameCreated.addGenre(gameenre)
 
     res.send(`Game Created, its id is ${gameCreated.id}`)
   } catch (err) {

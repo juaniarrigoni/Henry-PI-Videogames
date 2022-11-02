@@ -90,3 +90,4 @@ export function filterByGenre(payload) { //el payload es el value del input
         payload
     }
 }
+

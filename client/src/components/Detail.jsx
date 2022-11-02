@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Link, useHistory, useParams } from "react-router-dom";
+import { useHistory, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { videogamesDetail } from "../redux/actions";
 import "../styles/DetailStyle.css";
@@ -21,9 +21,9 @@ export default function Detail() {
       ) : (
         <>
           <div className="detailHomeBtnContainer">
-            <Link to={"/home"} onClick={() => history.goBack()}>
-              <button className="detailHomeBtn">HOME</button>
-            </Link>
+            <button onClick={() => history.goBack()} className="detailHomeBtn">
+              HOME
+            </button>
           </div>
           <div className="detailBorder">
             <div className="detailAllInfo">
@@ -46,7 +46,7 @@ export default function Detail() {
                 <div>
                   <h3 className="detailTitlePlatforms">Platforms:</h3>
                   <h4 className="detailPlatforms">
-                    {detailedGame.platforms?.map((p) => p.name).join(", ")}{" "}
+                    {detailedGame.platforms?.map((p) => p.name).join(", ")}
                   </h4>
                 </div>
                 <div>

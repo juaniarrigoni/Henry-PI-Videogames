@@ -46,7 +46,6 @@ export default function Form() {
 
   const genres = useSelector((state) => state.allGenres);
   const platforms = useSelector((state) => state.allPlatforms);
-
   const [errors, setErrors] = useState({});
   const [input, setInput] = useState({
     name: "",
@@ -75,7 +74,7 @@ export default function Form() {
   function handleGenreSelect(e) {
     setInput({
       ...input,
-      genres: [...input.genres, e.target.value],
+      genres: [[...new Set([...input.genres, e.target.value])]],
     });
     setErrors(
       validate({
@@ -88,8 +87,9 @@ export default function Form() {
   function handlePlatformsSelect(e) {
     setInput({
       ...input,
-      platforms: [...input.platforms, e.target.value],
+      platforms: [[...new Set([...input.platforms, e.target.value])]],
     });
+
     setErrors(
       validate({
         ...input,
@@ -102,11 +102,11 @@ export default function Form() {
   function handleSubmit(e) {
     if (input.name === "") {
       e.preventDefault();
-      alert("Completar correctamente el formulario");
+      alert("You should complete the form correctly");
     } else {
       e.preventDefault();
       dispatch(postVideogame(input));
-      alert("Videojuego Creado!!");
+      alert("Videogame created!!");
       setInput({
         name: "",
         description: "",
@@ -241,7 +241,6 @@ export default function Form() {
             <p className="formDanger"> {errors.platforms} </p>
           )}
         </div>
-
         <div className="formGenres">
           <label className="formLabelGenres">Genres</label>
           <select className="formSelect" onChange={(e) => handleGenreSelect(e)}>
