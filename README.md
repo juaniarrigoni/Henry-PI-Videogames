@@ -18,6 +18,8 @@
 
 1.  Fork the repository
 2.  Clone the repository
+3. NPM//Yarn I
+4. NPM//Yarn Start
 
 Versions:
 
